@@ -49,11 +49,11 @@ config = builder.build()
 > Refer to the [official Key Vault documentation for more
 > information about its Python client library.](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python).
 
-## How to run the tests against a real Key Vault
-The provided tests can either use a mocked `SecretClient`, or run
-against a real Key Vault. To run against a real service:
+## How to run the tests using a real Key Vault
+The provided tests can either use a mocked `SecretClient`, or use a real Key Vault. 
+To use a real Key Vault service:
 
-1. create a key vault
+1. create a Key Vault ([ref.](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python))
 2. sign-in using any way supported by `azure.identity.DefaultAzureCredential` (e.g. VS Code or `az login`)
 3. run the tests with the following command:
 
