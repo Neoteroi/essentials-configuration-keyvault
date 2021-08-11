@@ -1,0 +1,9 @@
+{
+    "example": {
+        "one": "Lorem ipsum",
+        "two": {
+            "three": "dolor sit amet"
+        }
+    },
+    "test": true
+}

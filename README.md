@@ -1,14 +1,14 @@
 ![Build](https://github.com/Neoteroi/essentials-configuration-keyvault/workflows/Build/badge.svg)
 [![pypi](https://img.shields.io/pypi/v/essentials-configuration-keyvault.svg)](https://pypi.python.org/pypi/essentials-configuration-keyvault)
-[![versions](https://img.shields.io/pypi/pyversions/essentials-configuration.svg)](https://github.com/Neoteroi/essentials-configuration-keyvault)
+[![versions](https://img.shields.io/pypi/pyversions/essentials-configuration-keyvault.svg)](https://github.com/Neoteroi/essentials-configuration-keyvault)
 [![codecov](https://codecov.io/gh/Neoteroi/essentials-configuration-keyvault/branch/main/graph/badge.svg)](https://codecov.io/gh/Neoteroi/essentials-configuration-keyvault)
-[![license](https://img.shields.io/github/license/Neoteroi/essentials-configuration-keyvault.svg)](https://github.com/Neoteroi/essentials-configuration/blob/main/LICENSE)
+[![license](https://img.shields.io/github/license/Neoteroi/essentials-configuration-keyvault.svg)](https://github.com/Neoteroi/essentials-configuration-keyvault/blob/main/LICENSE)
 
 # essentials-configuration-keyvault
 [Azure Key
 Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview)
 source for
-[`essentials-configuration`](https://github.com/Neoteroi/essentials).
+[`essentials-configuration`](https://github.com/Neoteroi/essentials-configuration).
 
 ```bash
 pip install essentials-configuration-keyvault
@@ -17,8 +17,8 @@ pip install essentials-configuration-keyvault
 `essentials-configuration` provides a way to handle configuration roots
 composed of different layers, such as configuration files and environmental
 variables. Layers are applied in order and can override each others' values,
-enabling different scenarios like configuration by environment and system
-instance.
+enabling different scenarios like configuration by environment (e.g. DEV, TEST,
+PROD) and system instance.
 
 `essentials-configuration-keyvault` provides a solution to add secrets stored
 in Azure Key Vault into configuration objects.
@@ -45,6 +45,9 @@ builder = ConfigurationBuilder(KeyVaultSource(secrets_client))
 # database connection strings, API keys for SendGrid, etc.)
 config = builder.build()
 ```
+
+> Refer to the [official Key Vault documentation for more
+> information about its Python client library.](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python).
 
 ## How to run the tests against a real Key Vault
 The provided tests can either use a mocked `SecretClient`, or run
