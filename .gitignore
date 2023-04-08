@@ -108,3 +108,4 @@ venv.bak/
 test-cov.xml
 test-output.xml
 *.py,cover
+.vscode
