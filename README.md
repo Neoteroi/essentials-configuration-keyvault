@@ -28,8 +28,8 @@ Example:
 ```python
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
-from configuration.common import ConfigurationBuilder
-from configuration.keyvault import KeyVaultSource
+from config.common import ConfigurationBuilder
+from config.keyvault import KeyVaultSource
 
 key_vault_name = "example-keyvault-name"
 
@@ -50,11 +50,13 @@ config = builder.build()
 > information about its Python client library.](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python).
 
 ## How to run the tests using a real Key Vault
-The provided tests can either use a mocked `SecretClient`, or use a real Key Vault. 
+
+The provided tests can either use a mocked `SecretClient`, or use a real Key Vault.
 To use a real Key Vault service:
 
 1. create a Key Vault ([ref.](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-python))
-2. sign-in using any way supported by `azure.identity.DefaultAzureCredential` (e.g. VS Code or `az login`)
+2. sign-in using any way supported by `azure.identity.DefaultAzureCredential` 3
+   (e.g. VS Code or `az login`)
 3. run the tests with the following command:
 
 ```bash

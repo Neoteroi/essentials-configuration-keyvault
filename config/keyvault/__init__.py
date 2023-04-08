@@ -1,7 +1,7 @@
 from typing import Any, Dict, Iterable, Tuple
 
 from azure.keyvault.secrets import SecretClient
-from configuration.common import ConfigurationSource
+from config.common import ConfigurationSource
 
 
 class KeyVaultSource(ConfigurationSource):
