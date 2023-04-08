@@ -1,9 +1,9 @@
 import pkg_resources
 from azure.keyvault.secrets import SecretClient
-from configuration.common import ConfigurationBuilder
-from configuration.json import JSONFile
+from config.common import ConfigurationBuilder
+from config.json import JSONFile
 
-from configuration.keyvault import KeyVaultSource
+from config.keyvault import KeyVaultSource
 
 from .conftest import TEST_SECRETS
 
