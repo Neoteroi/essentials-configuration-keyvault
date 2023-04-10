@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "essentials-configuration-keyvault"
-version = "1.0.0"
+version = "1.0.1"
 authors = [{ name = "Roberto Prevato", email = "roberto.prevato@gmail.com" }]
 description = "Azure Key Vault source for essentials-configuration."
 readme = "README.md"
@@ -23,24 +23,14 @@ keywords = ["Azure Key Vault", "secrets", "configuration", "environment"]
 
 dependencies = ["essentials-configuration~=2.0.0", "azure-identity~=1.12.0", "azure-keyvault-secrets~=4.7.0"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["config"]
+
 [tool.hatch.build.targets.sdist]
-exclude = [
-    "/.github",
-    "/docs",
-    "/deps",
-    "/htmlcov",
-    "/tests",
-    "Makefile",
-    "CODE_OF_CONDUCT.md",
-    ".isort.cfg",
-    ".gitignore",
-    ".flake8",
-    "junit",
-    "requirements.txt",
-    "mypy.ini",
-    "pytest.ini",
-    "venv",
-]
+exclude = ["tests"]
+
+[tool.hatch.build]
+only-packages = true
 
 [project.urls]
 "Homepage" = "https://github.com/Neoteroi/essentials-configuration-keyvault"
